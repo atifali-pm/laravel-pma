@@ -9,7 +9,7 @@ class ProjectResource extends JsonResource
     /**
      * Transform the resource into an array.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
     public function toArray($request)
@@ -18,10 +18,11 @@ class ProjectResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'description' => $this->description,
-            'created_at' => (string) $this->created_at,
-            'updated_at' => (string) $this->updated_at,
+            'created_at' => (string)$this->created_at,
+            'updated_at' => (string)$this->updated_at,
             'user' => $this->user,
             'tasks' => $this->tasks,
+            'tags' => $this->tags,
         ];
     }
 }
