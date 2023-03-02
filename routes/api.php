@@ -18,10 +18,13 @@ Route::middleware('auth:api')->prefix('v1')->group(function () {
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
-    Route::apiResource('projects', 'App\Http\Controllers\ProjectsController');
     Route::apiResource('users', 'App\Http\Controllers\UsersController');
     Route::apiResource('tasks', 'App\Http\Controllers\TasksController');
 });
 
+Route::prefix('v1')->group(function () {
+
+    Route::apiResource('projects', 'App\Http\Controllers\ProjectsController');
+});
 
 
